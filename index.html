@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Word Add-in: Resize Gambar</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 640px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #201f1e;
+      line-height: 1.6;
+    }
+    h1 { color: #0078d4; }
+    code {
+      background: #f3f2f1;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 13px;
+    }
+    .note {
+      background: #fff4ce;
+      border-left: 4px solid #ffb900;
+      padding: 12px 16px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    .btn {
+      display: inline-block;
+      background: #0078d4;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .btn:hover { background: #106ebe; }
+  </style>
+</head>
+<body>
+  <h1>Resize Gambar — Word Add-in</h1>
+  <p>
+    Halaman ini adalah landing page add-in Word Anda yang sudah ter-deploy di GitHub Pages.
+  </p>
+
+  <div class="note">
+    <strong>Halaman ini bukan untuk dipakai langsung.</strong>
+    Add-in ini hanya berfungsi jika dimuat di dalam Word Online / Word Desktop
+    melalui <code>manifest.xml</code>. Lihat panduan deploy untuk detail.
+  </div>
+
+  <h2>File penting</h2>
+  <ul>
+    <li><a href="taskpane.html"><code>taskpane.html</code></a> — UI panel add-in</li>
+    <li><a href="manifest.xml"><code>manifest.xml</code></a> — definisi add-in (upload ini ke Word)</li>
+    <li><a href="PANDUAN-DEPLOY-GITHUB-PAGES.md"><code>PANDUAN-DEPLOY-GITHUB-PAGES.md</code></a> — panduan lengkap</li>
+  </ul>
+
+  <h2>Cara pakai</h2>
+  <ol>
+    <li>Buka Word Online: <a href="https://www.office.com/launch/word">office.com/launch/word</a></li>
+    <li>Buka dokumen → tab <strong>Insert</strong> → <strong>Add-ins</strong> → <strong>Upload My Add-in</strong></li>
+    <li>Upload file <code>manifest.xml</code></li>
+    <li>Add-in muncul di tab <strong>Home</strong> → group <strong>Gambar Tools</strong></li>
+  </ol>
+
+  <a class="btn" href="taskpane.html">Buka taskpane.html (preview UI)</a>
+</body>
+</html>

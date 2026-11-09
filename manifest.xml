@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp
+    xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:bt="http://schemas.microsoft.com/office/officeappforguiless/1.1"
+    xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+    xsi:type="TaskPaneApp">
+
+  <!-- ============================================================ -->
+  <!-- GANTI SEMUA TEKS "https://github.com/delpriyo10/word-addin-resize-gambar" DENGAN URL HTTPS ANDA -->
+  <!-- Contoh: https://myname.github.io/word-addin-resize-gambar    -->
+  <!-- ============================================================ -->
+
+  <Id>8f4c2a3e-1b5d-4c7a-9e6f-2d3a1b5c4e7a</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Custom Dev Tools</ProviderName>
+  <DefaultLocale>id-ID</DefaultLocale>
+  <DisplayName DefaultValue="Resize Gambar" />
+  <Description DefaultValue="Resize otomatis semua gambar inline di dokumen Word. Lebar maksimal dapat diatur, tinggi menyesuaikan proporsi." />
+  <IconUrl DefaultValue="https://github.com/delpriyo10/word-addin-resize-gambar/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://github.com/delpriyo10/word-addin-resize-gambar/assets/icon-80.png" />
+  <SupportUrl DefaultValue="https://github.com/" />
+  <AppDomains>
+    <AppDomain>https://github.com/delpriyo10/word-addin-resize-gambar</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Document" />
+  </Hosts>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://github.com/delpriyo10/word-addin-resize-gambar/taskpane.html" />
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides
+      xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+      xsi:type="VersionOverridesV1_0">
+
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title" />
+            <Description resid="GetStarted.Description" />
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl" />
+          </GetStarted>
+
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="ResizeGambar.Group">
+                <Label resid="GroupLabel" />
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16" />
+                  <bt:Image size="32" resid="Icon.32x32" />
+                  <bt:Image size="80" resid="Icon.80x80" />
+                </Icon>
+                <Control xsi:type="Button" id="ResizeGambar.OpenPane">
+                  <Label resid="OpenPane.Label" />
+                  <Supertip>
+                    <Title resid="OpenPane.Label" />
+                    <Description resid="OpenPane.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16" />
+                    <bt:Image size="32" resid="Icon.32x32" />
+                    <bt:Image size="80" resid="Icon.80x80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ResizeGambar.Taskpane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images DefaultSize="16x16">
+        <bt:Image id="Icon.16x16" DefaultValue="https://github.com/delpriyo10/word-addin-resize-gambar/assets/icon-16.png" />
+        <bt:Image id="Icon.32x32" DefaultValue="https://github.com/delpriyo10/word-addin-resize-gambar/assets/icon-32.png" />
+        <bt:Image id="Icon.80x80" DefaultValue="https://github.com/delpriyo10/word-addin-resize-gambar/assets/icon-80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://learn.microsoft.com/office/dev/add-ins/develop/develop-overview" />
+        <bt:Url id="Taskpane.Url" DefaultValue="https://github.com/delpriyo10/word-addin-resize-gambar/taskpane.html" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="Resize Gambar Add-in" />
+        <bt:String id="GroupLabel" DefaultValue="Gambar Tools" />
+        <bt:String id="OpenPane.Label" DefaultValue="Resize Gambar" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="Add-in untuk resize otomatis gambar inline di Word. Atur lebar maksimal, tinggi menyesuaikan proporsi." />
+        <bt:String id="OpenPane.Tooltip" DefaultValue="Buka panel resize gambar" />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
